@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
+    "backend": "apps/backend",
     "frontend": "apps/frontend",
-    "frontend-e2e": "apps/frontend-e2e"
+    "frontend-e2e": "apps/frontend-e2e",
+    "native": "apps/native",
+    "native-e2e": "apps/native-e2e",
+    "shared-front": "libs/shared-front"
   }
 }
