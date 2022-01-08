@@ -49,7 +49,7 @@ Thumbs.db
 
 ## Secrets
 
-apps/backend/src/shared/auth/constants.ts
+**/**/constants.ts
 
 !default.mode1v3
 *.mode2v3

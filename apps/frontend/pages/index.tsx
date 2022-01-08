@@ -16,7 +16,6 @@ export function Index() {
               Welcome frontend 👋
             </h1>
           </div>
-
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>
