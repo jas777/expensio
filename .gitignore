@@ -46,6 +46,11 @@ Thumbs.db
 **/ios/**/*.pbxuser
 !default.pbxuser
 *.mode1v3
+
+## Secrets
+
+apps/backend/src/shared/auth/constants.ts
+
 !default.mode1v3
 *.mode2v3
 !default.mode2v3
