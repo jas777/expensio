@@ -15,10 +15,11 @@ const nextConfig = {
 
 const sentryConfig = {
   silent: false,
-  sentry: {
-    disableServerWebpackPlugin: true,
-    disableClientWebpackPlugin: true,
-  },
+  include: '~/_next/apps/frontend',
+  ignore: ['node_modules', 'webpack.config.js'],
+  configFile: "~/_next/apps/frontend/sentry.properties",
+  org: 'expensio',
+  project: 'frontend'
 }
 
 module.exports = withSentryConfig(withNx(nextConfig), sentryConfig);
