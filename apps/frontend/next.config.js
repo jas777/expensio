@@ -15,9 +15,9 @@ const nextConfig = {
 
 const sentryConfig = {
   silent: false,
-  include: '~/_next/apps/frontend',
+  include: 'dist/apps/frontend/.next',
   ignore: ['node_modules', 'webpack.config.js'],
-  configFile: "~/_next/apps/frontend/sentry.properties",
+  configFile: "dist/apps/frontend/sentry.properties",
   org: 'expensio',
   project: 'frontend'
 }
