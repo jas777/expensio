@@ -389,6 +389,15 @@ export function Index() {
             </details>
           </div>
 
+          <button
+            type="button"
+            onClick={() => {
+                throw new Error("Sentry Frontend Error");
+            }}
+          >
+            Throw error
+          </button>
+
           <p id="love">
             Carefully crafted with
             <svg

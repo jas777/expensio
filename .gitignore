@@ -96,6 +96,10 @@ buck-out/
 **/ios/Pods/
 /
 
+## Sentry
+
+.sentryclirc
+
 ## Nested node_modules
 
 node_modules/

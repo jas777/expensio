@@ -1,33 +1,17 @@
-import { Injectable } from '@nestjs/common';
-import { use } from 'passport';
-
-export type User = {
-  userId: number;
-  username: string;
-  email: string;
-  password: string;
-};
+import { Body, HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import UserEntity from '../shared/entities/user.entity';
+import { Repository } from 'typeorm';
+import UserDTO from '../shared/entities/user.dto';
 
 @Injectable()
 export class UsersService {
-  private readonly users = [
-    {
-      userId: 1,
-      username: 'user1one0ne',
-      email: 'lewak@wiosna.pl',
-      password: '9743a66f914cc249efca164485a19c5c', // dupa -> md5
-    },
-    {
-      userId: 2,
-      username: 'd00pa',
-      email: 'dupa@example.com',
-      password: '9743a66f914cc249efca164485a19c5c',
-    },
-  ];
+  constructor(
+    @InjectRepository(UserEntity)
+    private usersRepository: Repository<UserEntity>
+  ) {}
 
-  async findOne(username: string): Promise<null | User> {
-    return this.users.find(
-      (user) => user.username === username || user.email === username
-    );
+  async findOne(id: string): Promise<null | UserEntity> {
+    return this.usersRepository.findOne(id);
   }
 }
