@@ -18,7 +18,7 @@ describe('AuthService', () => {
       imports: [
         PassportModule,
         JwtModule.register({
-          secret: constants.secret,
+          secret: '123',
           signOptions: {
             expiresIn: '2h',
           },

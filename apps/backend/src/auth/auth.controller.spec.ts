@@ -4,7 +4,6 @@ import { getRepositoryToken, TypeOrmModule } from '@nestjs/typeorm';
 import UserEntity from '../shared/entities/user.entity';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import constants from '../shared/auth/constants';
 import { AuthService } from './auth.service';
 import { LocalStrategy } from '../shared/auth/LocalStrategy';
 import { JwtStrategy } from '../shared/auth/JwtStrategy';
@@ -18,7 +17,7 @@ describe('AuthController', () => {
       imports: [
         PassportModule,
         JwtModule.register({
-          secret: constants.secret,
+          secret: '123',
           signOptions: {
             expiresIn: '2h',
           },
