@@ -49,7 +49,8 @@ Thumbs.db
 
 ## Secrets
 
-**/**/constants.ts
+**/.env
+**/.env.local
 
 !default.mode1v3
 *.mode2v3

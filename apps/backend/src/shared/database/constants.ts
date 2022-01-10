@@ -1,12 +1,12 @@
 import { environment } from '../../environments/environment';
-import UserEntity from '../entities/user.entity';
+import UserEntity from "../entities/user.entity";
 
 export default {
   type: 'postgres',
-  host: 'db ip',
-  port: 5432,
-  username: 'db username',
-  password: 'db password',
+  host: process.env.DB_ADDRESS,
+  port: process.env.DB_PORT,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
   database: environment.production ? 'expensio' : 'expensio_dev',
   entities: [UserEntity],
   synchronize: !environment.production,

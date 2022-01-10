@@ -23,21 +23,6 @@
               "with": "apps/backend/src/environments/environment.prod.ts"
             }
           ]
-        },
-        "ci": {
-          "optimization": true,
-          "extractLicenses": true,
-          "inspect": false,
-          "fileReplacements": [
-            {
-              "replace": "apps/backend/src/shared/database/constants.ts",
-              "with": "apps/backend/src/shared/database/constants.example.ts"
-            },
-            {
-              "replace": "apps/backend/src/shared/auth/constants.ts",
-              "with": "apps/backend/src/shared/auth/constants.example.ts"
-            }
-          ]
         }
       }
     },
