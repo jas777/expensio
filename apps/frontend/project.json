@@ -12,7 +12,8 @@
         "outputPath": "dist/apps/frontend"
       },
       "configurations": {
-        "production": {}
+        "production": {},
+        "ci": {}
       }
     },
     "serve": {
