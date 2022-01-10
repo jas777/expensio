@@ -25,8 +25,6 @@ describe('AuthController', () => {
       ],
       providers: [
         AuthService,
-        LocalStrategy,
-        JwtStrategy,
         {
           provide: getRepositoryToken(UserEntity),
           useClass: Repository,
