@@ -7,6 +7,7 @@
       "executor": "@nrwl/node:build",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "webpackConfig": "apps/backend/webpack.config.js",
         "outputPath": "dist/apps/backend",
         "main": "apps/backend/src/main.ts",
         "tsConfig": "apps/backend/tsconfig.app.json",
@@ -32,6 +33,11 @@
       "executor": "@nrwl/node:execute",
       "options": {
         "buildTarget": "backend:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "backend:build:production"
+        }
       }
     },
     "lint": {

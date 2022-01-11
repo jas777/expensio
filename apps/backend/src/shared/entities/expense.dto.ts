@@ -1,16 +1,18 @@
-import { IsNumber, IsPositive, IsString, IsUUID, MaxLength } from "class-validator";
+import {
+  IsNumber,
+  IsOptional,
+  IsPositive,
+  IsString,
+  MaxLength,
+} from 'class-validator';
 
 export default class ExpenseDTO {
-
   @IsNumber()
   @IsPositive()
   value: number;
 
   @IsString()
   @MaxLength(1024)
+  @IsOptional()
   description?: string;
-
-  @IsUUID()
-  issuer: string;
-
 }

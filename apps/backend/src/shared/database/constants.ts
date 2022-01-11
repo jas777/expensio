@@ -2,7 +2,6 @@ import { environment } from '../../environments/environment';
 import { getMetadataArgsStorage } from 'typeorm';
 
 export default () => {
-  console.log(__dirname)
   return {
     type: 'postgres',
     host: process.env.DB_ADDRESS,
