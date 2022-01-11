@@ -7,7 +7,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm/dist/interfaces/typeorm-op
 @Module({
   imports: [
     AuthModule,
-    TypeOrmModule.forRoot(databaseConfig as Partial<TypeOrmModuleOptions>),
+    TypeOrmModule.forRoot(databaseConfig() as Partial<TypeOrmModuleOptions>),
   ],
 })
 export class AppModule {}

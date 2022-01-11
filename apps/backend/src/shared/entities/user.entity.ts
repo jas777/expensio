@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { IsAlphanumeric, IsEmail, IsUUID } from 'class-validator';
 import { User } from '../users/User';
+import ExpenseEntity from "./expense.entity";
 
 @Entity('users')
 export default class UserEntity {
@@ -18,6 +19,9 @@ export default class UserEntity {
 
   @Column('varchar', { length: 256 })
   password: string;
+
+  @OneToMany(() => ExpenseEntity, (expense) => expense.issuer)
+  expenses: ExpenseEntity[];
 
   toResponseObject(showPassword = false): Partial<User> {
     const { id, email, username, password } = this;

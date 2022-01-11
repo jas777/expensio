@@ -10,7 +10,8 @@
         "outputPath": "dist/apps/backend",
         "main": "apps/backend/src/main.ts",
         "tsConfig": "apps/backend/tsconfig.app.json",
-        "assets": ["apps/backend/src/assets"]
+        "assets": ["apps/backend/src/assets"],
+        "externalDependencies": "all"
       },
       "configurations": {
         "production": {
@@ -23,7 +24,8 @@
               "with": "apps/backend/src/environments/environment.prod.ts"
             }
           ]
-        }
+        },
+        "development": {}
       }
     },
     "serve": {

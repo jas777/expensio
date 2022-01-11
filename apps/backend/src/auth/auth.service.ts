@@ -49,20 +49,7 @@ export class AuthService {
       throw new HttpException('User already exists', HttpStatus.FORBIDDEN);
     }
 
-    let hashedPassword;
-
-    await bcrypt.hash(password, 10, (err, hash) => {
-      if (err)
-        throw new HttpException(
-          {
-            message: 'Unexpected error while creating the account!',
-            code: 'ATH01',
-            timestamp: Date.now().toString(),
-          },
-          HttpStatus.INTERNAL_SERVER_ERROR
-        );
-      hashedPassword = hash;
-    });
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     user = this.usersRepository.create({
       ...dto,
