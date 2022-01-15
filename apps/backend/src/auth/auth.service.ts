@@ -34,9 +34,13 @@ export class AuthService {
   }
 
   async login(user: Partial<User>) {
+
+    const userEntity = await this.usersRepository.findOne(user.id);
+
     const payload = { username: user.username, sub: user.id };
     return {
       access_token: this.jwtService.sign(payload),
+      ...userEntity.toResponseObject()
     };
   }
 

@@ -20,6 +20,7 @@ export default class UserDTO {
     message: 'Username must be alphanumeric'
   })
   @IsNotEmpty()
+  @MinLength(3)
   username: string;
 
   @IsString()

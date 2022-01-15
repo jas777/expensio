@@ -33,8 +33,6 @@ export class ExpensesService {
       issuer: user,
     });
 
-    console.log(dto);
-
     await this.expensesRepository.save(expense);
     return expense.toResponseObject();
   }
@@ -104,4 +102,5 @@ export class ExpensesService {
 
     return expense;
   }
+
 }

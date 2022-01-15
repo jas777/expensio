@@ -1,18 +1,21 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
+import './styles.scss';
+import { SessionProvider } from 'next-auth/react';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   return (
-    <> 
+    <>
       <Head>
-        <title>Welcome to frontend!</title>
+        <title>expensio | Your favourite expense tracker</title>
       </Head>
-      <main className="app">
-        <Component {...pageProps} />
+      <main className="app font-content">
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+        </SessionProvider>
       </main>
     </>
   );
-}
+};
 
-export default CustomApp;
+export default App;
