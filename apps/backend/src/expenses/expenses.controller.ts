@@ -1,7 +1,7 @@
 import {
   Body,
   Controller,
-  Delete,
+  Delete, Get,
   Param,
   Post,
   Put,
@@ -37,4 +37,11 @@ export class ExpensesController {
   async deleteExpense(@Param('id') id: string, @User('id') authUser: string) {
     return await this.expensesService.deleteExpense(id, authUser);
   }
+
+  @Get('user')
+  @UseGuards(JwtAuthGuard)
+  async getUserExpenses(@User('id') authUser: string) {
+    return await this.expensesService.getUserExpenses(authUser);
+  }
+
 }

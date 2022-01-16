@@ -42,21 +42,25 @@ module.exports = {
         'Segoe UI Emoji',
         'Segoe UI Symbol',
         'Noto Color Emoji',
-      ]
+      ],
     },
     extend: {
       colors: {
-        'text': '#0f172a',
-        'text-secondary': '#374151',
+        text: '#0f172a',
+        'text-secondary': '#0b2941',
         primary: '#7e22ce',
         'primary-darker': '#6b21a8',
         secondary: '#be185d',
         'secondary-darker': '#9d174d',
         tertiary: '#475569',
         'tertiary-darker': '#334155',
-        background: '#fafaf9',
+        background: '#F3F2F9',
         error: '#f43f5e',
-        'field-background': '#f8fafc'
+        'field-background': '#f8fafc',
+        'card-background': '#fff',
+      },
+      maxHeight: {
+        '1/2': '50%',
       },
     },
   },

@@ -73,6 +73,27 @@ export class ExpensesService {
     return 'OK';
   }
 
+  async getUserExpenses(authUser: string) {
+    const user = await this.usersRepository.findOne(authUser);
+
+    if (!user) {
+      throw new HttpException(
+        {
+          message: `Invalid user '${authUser}'!`,
+          timestamp: Date.now().toString(),
+        },
+        HttpStatus.BAD_REQUEST
+      );
+    }
+
+    const expenses = await this.expensesRepository.find({
+      where: { issuer: user }
+    });
+
+    return expenses.map(expense => expense.toResponseObject());
+
+  }
+
   async checkExpenseOwner(id: string, authUser: string) {
     const expense = await this.expensesRepository.findOne(id, {
       relations: ['issuer'],
@@ -102,5 +123,4 @@ export class ExpensesService {
 
     return expense;
   }
-
 }

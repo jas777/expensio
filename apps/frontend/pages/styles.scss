@@ -5,3 +5,15 @@
 * {
   color: theme('colors.text');
 }
+
+body {
+  background-color: theme('colors.background');
+}
+
+.spinnerOverridePrimary path {
+  stroke: theme('colors.primary')
+}
+
+.navbarIcon > path {
+  stroke-width: 1.5;
+}
