@@ -19,9 +19,9 @@ import { bisector, extent, max } from 'd3-array';
 
 type TooltipData = Expense; // tooltip start
 
-export const background = '#c084fc';
+export const background = '#c084fc41';
 export const background2 = '#F3F2F9';
-export const accentColor = '#7e22ce';
+export const accentColor = '#7e22ceaa';
 export const accentColorDark = '#7e22ce';
 
 export const tooltipStyles = {
